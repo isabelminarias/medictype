@@ -40,33 +40,17 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-var connection;
-if(process.env.JAWSDB_URL) {
-  //Heroku deployment
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  //local host
-    connection = mysql.createConnection({
-        root: 3000,
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "db_name",
-    });
-};  
-
-
-  mysql: {
-    adapter    : 'sails-mysql',
-    host      : 'localhost',
-    port      : 3306,
-    user      : 'medictype',
-    password  : 'password',
-    database  : 'medictype'
-
-
-
-  }
+'mysql'  => [
+    'driver'    => 'mysql',
+    'host'      => env('DB_HOST', 'kavfu5f7pido12mr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306'),
+    'database'  => env('DB_DATABASE', 'if7rqiamafmmfd06'),
+    'username'  => env('DB_USERNAME', 'gat4d6i0sao4ulz1'),
+    'password'  => env('DB_PASSWORD', 'vxm9do549wma1gjb'),
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+    'strict'    => false,
+],
 
   /***************************************************************************
   *                                                                          *
