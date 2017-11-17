@@ -40,17 +40,20 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-'mysql'  => [
-    'driver'    => 'mysql',
-    'host'      => env('DB_HOST', 'kavfu5f7pido12mr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306'),
-    'database'  => env('DB_DATABASE', 'if7rqiamafmmfd06'),
-    'username'  => env('DB_USERNAME', 'gat4d6i0sao4ulz1'),
-    'password'  => env('DB_PASSWORD', 'vxm9do549wma1gjb'),
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-    'strict'    => false,
-],
+  
+
+
+  mysql: {
+    adapter    : 'sails-mysql',
+    host      : 'localhost',
+    port      : 3306,
+    user      : 'medictype',
+    password  : 'password',
+    database  : 'medictype'
+
+
+
+  }
 
   /***************************************************************************
   *                                                                          *
@@ -78,11 +81,11 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-   heroku_postgres: {
-     adapter: 'sails-postgresql',
-     url: process.env.DATABASE_URL, //Automatically set by heroku
-     ssl: false,
-   }
+   //heroku_postgres: {
+   //  adapter: 'sails-postgresql',
+   //  url: process.env.DATABASE_URL, //Automatically set by heroku
+   //  ssl: false,
+   //}
 
 
   /***************************************************************************
